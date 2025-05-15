@@ -14,67 +14,67 @@ const Matches = () => {
   const [compatibilityFilter, setCompatibilityFilter] = useState([70]);
   const [searchQuery, setSearchQuery] = useState("");
   
-  // Mock data for roommate matches
+  // Mock data for roommate matches with Indian context
   const matches = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      age: 28,
+      name: "Priya Sharma",
+      age: 27,
       occupation: "Software Developer",
       compatibilityScore: 96,
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
-      location: "Downtown, New York",
-      budget: "$1,200 - $1,800/month"
+      image: "https://images.unsplash.com/photo-1611858246382-da4877c6668b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+      location: "Koramangala, Bangalore",
+      budget: "₹18,000 - ₹25,000/month"
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Vikram Patel",
       age: 25,
-      occupation: "Graphic Designer",
+      occupation: "UI/UX Designer",
       compatibilityScore: 92,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
-      location: "Brooklyn, New York",
-      budget: "$1,000 - $1,500/month"
+      image: "https://images.unsplash.com/photo-1608549036505-ead5b1de5417?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+      location: "Indiranagar, Bangalore",
+      budget: "₹15,000 - ₹22,000/month"
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      age: 27,
+      name: "Neha Gupta",
+      age: 26,
       occupation: "Marketing Manager",
       compatibilityScore: 88,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
-      location: "Queens, New York",
-      budget: "$1,400 - $2,000/month"
+      image: "https://images.unsplash.com/photo-1624788190600-193a0b52478a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+      location: "Powai, Mumbai",
+      budget: "₹20,000 - ₹30,000/month"
     },
     {
       id: 4,
-      name: "David Wilson",
-      age: 30,
+      name: "Arjun Mehta",
+      age: 29,
       occupation: "Financial Analyst",
       compatibilityScore: 85,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
-      location: "Upper East Side, New York",
-      budget: "$1,800 - $2,500/month"
+      image: "https://images.unsplash.com/photo-1618764400608-9e7115eaeacb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+      location: "Worli, Mumbai",
+      budget: "₹25,000 - ₹35,000/month"
     },
     {
       id: 5,
-      name: "Jessica Kim",
-      age: 26,
+      name: "Anjali Singh",
+      age: 24,
       occupation: "Teacher",
       compatibilityScore: 82,
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
-      location: "Harlem, New York",
-      budget: "$1,100 - $1,600/month"
+      image: "https://images.unsplash.com/photo-1591019052241-e4d95a5dc3fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+      location: "Saket, Delhi",
+      budget: "₹16,000 - ₹22,000/month"
     },
     {
       id: 6,
-      name: "James Moore",
-      age: 29,
-      occupation: "Nurse",
+      name: "Rahul Kumar",
+      age: 28,
+      occupation: "Healthcare Professional",
       compatibilityScore: 79,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
-      location: "Hell's Kitchen, New York",
-      budget: "$1,200 - $1,900/month"
+      image: "https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=500&q=80",
+      location: "Vasant Kunj, Delhi",
+      budget: "₹17,000 - ₹26,000/month"
     }
   ];
   
@@ -128,10 +128,11 @@ const Matches = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">All Locations</SelectItem>
-                        <SelectItem value="downtown">Downtown</SelectItem>
-                        <SelectItem value="brooklyn">Brooklyn</SelectItem>
-                        <SelectItem value="queens">Queens</SelectItem>
-                        <SelectItem value="upper-east">Upper East Side</SelectItem>
+                        <SelectItem value="bangalore">Bangalore</SelectItem>
+                        <SelectItem value="mumbai">Mumbai</SelectItem>
+                        <SelectItem value="delhi">Delhi</SelectItem>
+                        <SelectItem value="pune">Pune</SelectItem>
+                        <SelectItem value="hyderabad">Hyderabad</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -144,10 +145,10 @@ const Matches = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">Any Budget</SelectItem>
-                        <SelectItem value="budget">$500 - $1,000</SelectItem>
-                        <SelectItem value="mid">$1,000 - $1,500</SelectItem>
-                        <SelectItem value="high">$1,500 - $2,000</SelectItem>
-                        <SelectItem value="luxury">$2,000+</SelectItem>
+                        <SelectItem value="budget">₹5,000 - ₹15,000</SelectItem>
+                        <SelectItem value="mid">₹15,000 - ₹25,000</SelectItem>
+                        <SelectItem value="high">₹25,000 - ₹35,000</SelectItem>
+                        <SelectItem value="luxury">₹35,000+</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
